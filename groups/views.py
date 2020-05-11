@@ -36,7 +36,6 @@ class JoinGroup(LoginRequiredMixin, generic.RedirectView):
         return super().get(request, *args, **kwargs)
 
 
-
 class LeaveGroup(LoginRequiredMixin, generic.RedirectView):
 
     def get_redirect_url(self, *args, **kwargs):
@@ -52,4 +51,3 @@ class LeaveGroup(LoginRequiredMixin, generic.RedirectView):
             messages.success(self.request, 'You have left the group')
 
         return super().get(request, *args, **kwargs)
-        
