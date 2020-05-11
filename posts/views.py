@@ -4,6 +4,7 @@ from django.urls import reverse_lazy
 from django.views import generic
 from django.http import Http404
 from braces.views import SelectRelatedMixin
+from django.contrib import messages
 
 from . import models
 from . import forms
