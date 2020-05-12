@@ -1,17 +1,18 @@
 {% extends "groups/group_base.html" %}
 
 {% block pregroup %}
-<div class="col-12">
+<div class="col-4">
     <h1>{{group.name}}</h1>
-    <h2>Member Count: {{group.members.count}}</h2>
+    <h6>Member Count: {{group.members.count}}
 
-    <div class="container">
+    <span class="float-right">
         {% if user in group.members.all %}
-            <a class="btn btn-warning" href="{% url 'groups:leave', slug=group.slug %}">Leave</a>
+            <a class="btn btn-warning" href="{% url 'groups:leave' slug=group.slug %}">Leave</a>
         {% else %}
-            <a class="btn btn-info" href="{% url 'groups:join', slug=group.slug %}">Join</a>
+            <a class="btn btn-info" href="{% url 'groups:join' slug=group.slug %}">Join</a>
         {% endif %}
-    </div>
+    </span>
+    </h6>
 </div>
 {% endblock %}
 
@@ -23,7 +24,7 @@
     {% else %}
 
         {% for post in group.post.all %}
-            {% include "post/_post.html" %}
+            {% include "posts/_posts.html" %}
         {% endfor %}
 
     {% endif %}

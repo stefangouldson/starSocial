@@ -3,6 +3,7 @@ from django.contrib.auth.mixins import (LoginRequiredMixin, PermissionRequiredMi
 from django.urls import reverse
 from django.views import generic
 from django.contrib import messages
+from . import models
 
 # Create your views here.
 
